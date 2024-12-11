@@ -1,3 +1,11 @@
+export const getCelebrities = () => {
+    return database.celebrities.map(celebrity => ({...celebrity}))
+}
+
+export const getChildren = () => {
+    return database.children.map(child => ({...child}))
+}
+
 const database = {
     celebrities: [{
         id: 1,
@@ -36,7 +44,7 @@ const database = {
         sport: "Baseball"
     }, {
         id: 8,
-        mane: "Tiffanie Tubby",
+        name: "Tiffanie Tubby",
         email: "ttubby7@intel.com",
         sport: "Basketball"
     }, {
@@ -69,12 +77,12 @@ const database = {
         id: 4,
         name: "Karine McKennan",
         celebrityId: 6,
-        wissh: "Drive a race car"
+        wish: "Drive a race car"
     }, {
         id: 5,
         name: "Cissy Weavers",
         celebrityId: 5,
-        wish: "Disneyworld trip and spend the day with Mickey Mouse"
+        wish: "Spend the day with Mickey Mouse at Disney World"
     }, {
         id: 6,
         name: "Bendick Standbrooke",

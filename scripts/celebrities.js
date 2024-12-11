@@ -2,14 +2,14 @@ import { getCelebrities } from "./database.js"
 
 const celebrities = getCelebrities()
 
-export const Celebrities = () => {
+export const celebritiesList = () => {
     let html = "<ol>"
 
-    for (const star of celebrities) {
+    for (const celebrity of celebrities) {
         html += `<li 
                     data-id="${celebrity.id}" 
                     data-type="celebrity"
-                    data-sport="${celebrty.sport}"
+                    data-sport="${celebrity.sport}"
                     id="star--${celebrity.id}">
                     ${celebrity.name}
                 </li>`
@@ -17,4 +17,10 @@ export const Celebrities = () => {
 
     html += "</ol>"
     return html
+}
+
+
+export const celebrityClickedEvent = (clickEvent) => {
+    let clickedDS = clickEvent.target.dataset
+    window.alert(`This celebrity's sport is ${clickedDS.sport}`)
 }
